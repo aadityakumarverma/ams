@@ -38,6 +38,11 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        viewBinding = true
+        buildConfig = true
+        compose = true
+    }
 }
 
 dependencies {
