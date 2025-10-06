@@ -1,6 +1,8 @@
 package com.ams.views.fragments.auth
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -19,10 +21,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.os.postDelayed
+import androidx.core.view.isVisible
 import androidx.navigation.NavController
+import com.ams.R
 import com.ams.databinding.FragmentLoginBinding
 import com.ams.utils.MyColor
 import com.ams.utils.SharedPreferencesHelper
+import com.ams.utils.UtilsFunctions
+import com.ams.utils.UtilsFunctions.setOnClickListeners
+import com.ams.views.activities.MainActivity.Companion.mySystemBars
 import kotlinx.coroutines.delay
 
 class LoginFragment : Fragment() {
@@ -36,6 +44,9 @@ class LoginFragment : Fragment() {
     ): View? {
         binding = FragmentLoginBinding.inflate(layoutInflater)
 
+        binding.apply {
+            llParent.setPadding(0, mySystemBars.top,0,0)
+        }
         binding.composeBackground.setContent {
             AnimatedBackground2() // <-- our composable animation
         }
@@ -43,6 +54,34 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+
+        binding.apply {
+            cvMainBtn.setOnClickListeners {
+
+                UtilsFunctions.morphToProgress(binding.tvMain, binding.lpbProgress)
+                cvMainBtn.isEnabled = false
+
+
+                Handler(Looper.getMainLooper()).postDelayed({
+                    UtilsFunctions.morphToTick(binding.ivTick, cardView = binding.cvMainBtn)
+
+                    Handler(Looper.getMainLooper()).postDelayed(
+                        {
+                            ivTick.isVisible = false
+                            lpbProgress.isVisible = false
+                            tvMain.text = "SIGN IN"
+                            cvMainBtn.isEnabled = true
+                        }, 1000
+                    )
+                }, 2000)
+            }
+        }
+    }
 
     @Composable
     @Preview(showSystemUi = true)
@@ -91,7 +130,7 @@ class LoginFragment : Fragment() {
             val circleRadius = circleDiameter / 2f
 
             // Only 2/3 visible → push circle center downward
-            val visibleRatio = 2f / 5f
+            val visibleRatio = 1.5f / 5f
             val hiddenPart = circleDiameter * (1 - visibleRatio)
 
             // Animate rise
@@ -112,8 +151,6 @@ class LoginFragment : Fragment() {
             )
         }
     }
-
-
 
 
 }

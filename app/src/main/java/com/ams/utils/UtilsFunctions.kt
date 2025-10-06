@@ -36,6 +36,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
 import com.ams.R
+import com.ams.utils.MyAnimationUtils.fadeIn
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.google.android.material.progressindicator.LinearProgressIndicator
@@ -90,6 +91,12 @@ object UtilsFunctions {
             progressBar.progress = progress
         }
         animator.start()
+    }
+
+
+    fun morphToTick(imageView: ImageView, cardView: CardView) {
+        imageView.fadeIn()
+        cardView.isEnabled = false
     }
 
 

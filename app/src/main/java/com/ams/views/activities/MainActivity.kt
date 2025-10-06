@@ -39,9 +39,9 @@ class MainActivity : AppCompatActivity() {
             val imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime())
 
             // Choose whichever is bigger (IME or navigation bar)
-            val bottomInset = maxOf(mySystemBars.bottom, imeInsets.bottom)
+//            val bottomInset = maxOf(mySystemBars.bottom, imeInsets.bottom)
 
-            v.setPadding(mySystemBars.left, 0, mySystemBars.right, bottomInset)
+            v.setPadding(mySystemBars.left, 0, mySystemBars.right, mySystemBars.bottom)
             insets
         }
 

@@ -5,11 +5,27 @@
     <color name="btn_light_blue">#56cbff</color>
     <color name="btn_dark_blue">#546cde</color>
     <color name="app_dark">#546cde</color>
+    <color name="app_highlight">#546cde</color>
     <color name="app_light">#56cbff</color>
     <color name="app_gray">#6C7278</color>
-    <color name="btn_light_gray">#4e4e4e</color>
+    <color name="btn_gray">#4e4e4e</color>
     <color name="default_text_color">#0A1629</color>
     <color name="default_ic_color">#3A3A3A</color>
     <color name="transparent">@android:color/transparent</color>
     <color name="red">#E62112</color>
+
+    <color name="dark_gray">#4A4650</color>
+    <color name="default_hint_color">#A8A7A9</color>
+    <color name="helper_gray">#A8A7A9</color>
+    <color name="colorControlHighlight">#20000000</color>
+    <color name="colorLoaderHighlight">#50000000</color>
+
+    <color name="btn_green">#37BB69</color>
+    <color name="btn_green_half">#9037BB69</color>
+
+    <color name="tag_yellow">#ffb100</color>
+    <color name="tag_green">#33a151</color>
+    <color name="tag_blue">#0092E5</color>
+    <color name="tag_gray">#a8a8a8</color>
+    <color name="tag_red">#ED4337</color>">
 </resources>
