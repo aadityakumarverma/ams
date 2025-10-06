@@ -49,6 +49,7 @@
                 android:src="@drawable/ic_login_sticker" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilNsrsId"
                 style="@style/MyTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,6 +59,7 @@
 
                 <!--this is the actual edit text which takes the input-->
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNsrsId"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
@@ -66,6 +68,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPassword"
                 style="@style/MyTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -77,6 +80,7 @@
 
                 <!--this is the actual edit text which takes the input-->
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionDone"
@@ -87,6 +91,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
+                android:id="@+id/tvForgotPass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/forgot_password"

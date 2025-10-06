@@ -27,9 +27,11 @@ import androidx.navigation.NavController
 import com.ams.R
 import com.ams.databinding.FragmentLoginBinding
 import com.ams.utils.MyColor
+import com.ams.utils.NetworkUtils
 import com.ams.utils.SharedPreferencesHelper
 import com.ams.utils.UtilsFunctions
 import com.ams.utils.UtilsFunctions.setOnClickListeners
+import com.ams.utils.UtilsFunctions.showToast
 import com.ams.views.activities.MainActivity.Companion.mySystemBars
 import kotlinx.coroutines.delay
 
@@ -61,24 +63,59 @@ class LoginFragment : Fragment() {
 
 
         binding.apply {
+            tvForgotPass.setOnClickListeners {
+
+            }
+            tvSignUp.setOnClickListeners {
+
+            }
+
             cvMainBtn.setOnClickListeners {
 
-                UtilsFunctions.morphToProgress(binding.tvMain, binding.lpbProgress)
+                UtilsFunctions.morphToProgress(tvMain, lpbProgress)
                 cvMainBtn.isEnabled = false
 
 
                 Handler(Looper.getMainLooper()).postDelayed({
-                    UtilsFunctions.morphToTick(binding.ivTick, cardView = binding.cvMainBtn)
+                    UtilsFunctions.morphToTick(ivTick, cardView = cvMainBtn)
 
                     Handler(Looper.getMainLooper()).postDelayed(
                         {
                             ivTick.isVisible = false
                             lpbProgress.isVisible = false
-                            tvMain.text = "SIGN IN"
+                            tvMain.text = "LOG IN"
                             cvMainBtn.isEnabled = true
                         }, 1000
                     )
                 }, 2000)
+
+                /*val nsrsId = etNsrsId.text.toString()
+                val password = etPassword.text.toString()
+
+
+                if (nsrsId.isEmpty()) {
+                    showToast(requireContext(), "NSRS Id is required!")
+                    tilNsrsId.error = "NSRS Id is required!"
+                    tilNsrsId.isErrorEnabled = true
+
+                }
+                if (nsrsId.isEmpty()) {
+                    showToast(requireContext(), "NSRS Id is required!")
+                    tilPassword.error = "NSRS Id is required!"
+                    tilPassword.isErrorEnabled = true
+
+                }
+                else if (!NetworkUtils.isInternetAvailable(requireContext())) {
+                    NetworkUtils.askToEnableInternet(requireContext())
+                }
+                else {
+//                    authViewModel.login(LoginReq(countryCode = countryCode, phone = phoneNumber))
+
+
+
+                }*/
+
+
             }
         }
     }
