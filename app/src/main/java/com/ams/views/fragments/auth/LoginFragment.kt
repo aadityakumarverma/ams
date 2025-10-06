@@ -1,13 +1,10 @@
 package com.ams.views.fragments.auth
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.Spring
@@ -23,18 +20,13 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
-import androidx.navigation.fragment.findNavController
-import com.ams.R
-import com.ams.databinding.FragmentSplashBinding
+import com.ams.databinding.FragmentLoginBinding
 import com.ams.utils.MyColor
 import com.ams.utils.SharedPreferencesHelper
-import com.ams.utils.UtilsFunctions
-import render.animations.Attention
-import render.animations.Render
-import render.animations.Slide
+import kotlinx.coroutines.delay
 
-class SplashFragment : Fragment() {
-    private lateinit var binding: FragmentSplashBinding
+class LoginFragment : Fragment() {
+    private lateinit var binding: FragmentLoginBinding
     lateinit var sharedPreferencesHelper: SharedPreferencesHelper
     var navController: NavController? = null
 
@@ -42,72 +34,15 @@ class SplashFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSplashBinding.inflate(layoutInflater)
-        navController = findNavController()
+        binding = FragmentLoginBinding.inflate(layoutInflater)
 
-
-        val animation = AnimationUtils.loadAnimation(context, R.anim.fade_in)
-        binding.ivLogo.startAnimation(animation)
-
-        Handler(Looper.getMainLooper()).postDelayed({
-            navController?.navigate(R.id.LoginFragment,null, UtilsFunctions.navOptionsPopUpIn)
-        },2000)
-//        binding.composeBackground.setContent {
-//            AnimatedBackground2() // <-- our composable animation
-//        }
+        binding.composeBackground.setContent {
+            AnimatedBackground2() // <-- our composable animation
+        }
 
         return binding.root
     }
 
-
-    @Composable
-    @Preview(showSystemUi = true)
-    fun AnimatedBackground() {
-        val progress = remember { Animatable(0f) }
-
-        LaunchedEffect(Unit) {
-            progress.animateTo(
-                targetValue = 1f,
-                animationSpec = tween(
-                    durationMillis = 2000,
-                    easing = FastOutSlowInEasing
-                )
-            )
-        }
-
-        Canvas(modifier = Modifier.fillMaxSize()) {
-            drawRect(
-                brush = Brush.radialGradient(
-                    colors = listOf(MyColor.CenterBlue, MyColor.OuterBlue),
-                    center = Offset(size.width / 2, size.height / 3),
-                    radius = size.minDimension / 1.2f
-                ),
-                size = size
-            )
-
-
-            // Circle size = 3:4 of screen height
-            val circleDiameter = size.height * (3f / 4f)
-            val circleRadius = circleDiameter / 2f
-
-            // Only 2/3 visible → push circle center downward
-            val visibleRatio = 2f / 5f
-            val hiddenPart = circleDiameter * (1 - visibleRatio)
-
-            // Animate rise: start below screen, end at correct position
-            val startY = size.height + circleRadius // completely below screen
-            val endY = size.height - (circleDiameter - hiddenPart)
-            val centerY = startY + (endY - startY) * progress.value
-
-            val centerX = size.width / 2f
-
-            drawCircle(
-                color = MyColor.White,
-                radius = circleRadius,
-                center = Offset(centerX, centerY)
-            )
-        }
-    }
 
     @Composable
     @Preview(showSystemUi = true)
@@ -177,7 +112,6 @@ class SplashFragment : Fragment() {
             )
         }
     }
-
 
 
 

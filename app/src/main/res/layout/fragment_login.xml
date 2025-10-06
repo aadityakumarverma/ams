@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_gradient"
-    tools:context=".views.fragments.auth.SplashFragment">
+    tools:context=".views.fragments.auth.LoginFragment">
 
     <!-- activity_main.xml -->
     <androidx.compose.ui.platform.ComposeView
@@ -12,11 +11,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/ivLogo"
-        android:layout_width="@dimen/_150sdp"
-        android:layout_height="@dimen/_150sdp"
-        android:layout_gravity="center"
-        android:src="@drawable/app_logo" />
 
 </FrameLayout>
