@@ -24,6 +24,8 @@
     </style>
     <style name="MyTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
+        <item name="errorEnabled">true</item>
+
         <item name="boxCornerRadiusBottomEnd">@dimen/_50sdp</item>
         <item name="boxCornerRadiusBottomStart">@dimen/_50sdp</item>
         <item name="boxCornerRadiusTopEnd">@dimen/_50sdp</item>

@@ -3,15 +3,10 @@ package com.ams.utils
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
-import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.util.Patterns
@@ -27,10 +22,8 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.core.animation.doOnEnd
 import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
 import androidx.core.widget.NestedScrollView
 import androidx.core.widget.doOnTextChanged
-import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavOptions
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
@@ -41,6 +34,7 @@ import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.textfield.TextInputLayout
 import render.animations.Attention
 import render.animations.Render
 import java.text.SimpleDateFormat
@@ -54,15 +48,11 @@ import kotlin.collections.forEach
 import kotlin.collections.forEachIndexed
 import kotlin.collections.indices
 import kotlin.collections.isEmpty
-import kotlin.collections.joinToString
 import kotlin.ranges.until
 import kotlin.text.isEmpty
-import kotlin.text.isNullOrEmpty
 import kotlin.text.split
 import kotlin.text.toInt
-import kotlin.text.trim
 import kotlin.to
-import kotlin.toString
 
 object UtilsFunctions {
     @SuppressLint("StaticFieldLeak")
@@ -267,28 +257,6 @@ object UtilsFunctions {
     }
 
 
-    fun getNext7Days(startDateStr: String? = null): ArrayList<Pair<String, String>> {
-        val list = arrayListOf<Pair<String, String>>()
-        val calendar = Calendar.getInstance()
-        val inputFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
-        val outputFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
-        val dayFormat = SimpleDateFormat("EEE", Locale.getDefault())
-
-        // Parse provided date or use today
-        if (!startDateStr.isNullOrEmpty()) {
-            calendar.time = inputFormat.parse(startDateStr) ?: Date()
-        }
-
-        repeat(7) {
-            val dateStr = outputFormat.format(calendar.time)
-            val dayStr = dayFormat.format(calendar.time)
-            list.add(dateStr to dayStr)
-            calendar.add(Calendar.DAY_OF_YEAR, 1)
-        }
-
-        return list
-    }
-
 
     fun showToast(context: Context, message: String) {
         val inflater = LayoutInflater.from(context)
@@ -398,6 +366,46 @@ object UtilsFunctions {
                 }
 
             }
+
+        }
+    }
+
+    fun setTextAndFocusChangeListener(vararg textViews: TextView) {
+
+        textViews.forEach { textView ->
+            val textInputLayout = textView.parent.parent as TextInputLayout
+
+            textView.doOnTextChanged { text, start, before, count ->
+                if(textView.text.toString().isEmpty()) {
+                    if(textView.isFocused){
+
+                    }
+                    else{
+                        textInputLayout.error = ""
+                    }
+                } else {
+                    if(textView.isFocused){
+                        textInputLayout.error = ""
+//                        textView.setBackgroundResource(R.drawable.et_bg_focused)
+                    }
+                    else{
+                        textInputLayout.error = ""
+//                        textView.setBackgroundResource(R.drawable.et_bg_unfocused)
+                    }
+                }
+            }
+            textInputLayout.setErrorIconOnClickListener {
+                textInputLayout.error = ""
+            }
+            /*textView.setOnFocusChangeListener { _, focused ->
+                if(focused){
+//                    textView.setBackgroundResource(R.drawable.et_bg_focused)
+                }
+                else{
+//                    textView.setBackgroundResource(R.drawable.et_bg_unfocused)
+                }
+
+            }*/
 
         }
     }

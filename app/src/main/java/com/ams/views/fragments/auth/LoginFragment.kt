@@ -31,8 +31,10 @@ import com.ams.utils.NetworkUtils
 import com.ams.utils.SharedPreferencesHelper
 import com.ams.utils.UtilsFunctions
 import com.ams.utils.UtilsFunctions.setOnClickListeners
+import com.ams.utils.UtilsFunctions.setTextAndFocusChangeListener
 import com.ams.utils.UtilsFunctions.showToast
 import com.ams.views.activities.MainActivity.Companion.mySystemBars
+import com.google.android.material.textfield.TextInputLayout
 import kotlinx.coroutines.delay
 
 class LoginFragment : Fragment() {
@@ -70,50 +72,55 @@ class LoginFragment : Fragment() {
 
             }
 
+            setTextAndFocusChangeListener(etNsrsId, etPassword)
+
             cvMainBtn.setOnClickListeners {
 
-                UtilsFunctions.morphToProgress(tvMain, lpbProgress)
-                cvMainBtn.isEnabled = false
 
-
-                Handler(Looper.getMainLooper()).postDelayed({
-                    UtilsFunctions.morphToTick(ivTick, cardView = cvMainBtn)
-
-                    Handler(Looper.getMainLooper()).postDelayed(
-                        {
-                            ivTick.isVisible = false
-                            lpbProgress.isVisible = false
-                            tvMain.text = "LOG IN"
-                            cvMainBtn.isEnabled = true
-                        }, 1000
-                    )
-                }, 2000)
-
-                /*val nsrsId = etNsrsId.text.toString()
+                val nsrsId = etNsrsId.text.toString()
                 val password = etPassword.text.toString()
+//                val passwordPattern = Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#\$%^&+=!]).{8,}$")
 
 
                 if (nsrsId.isEmpty()) {
-                    showToast(requireContext(), "NSRS Id is required!")
-                    tilNsrsId.error = "NSRS Id is required!"
-                    tilNsrsId.isErrorEnabled = true
-
-                }
-                if (nsrsId.isEmpty()) {
-                    showToast(requireContext(), "NSRS Id is required!")
-                    tilPassword.error = "NSRS Id is required!"
-                    tilPassword.isErrorEnabled = true
-
-                }
-                else if (!NetworkUtils.isInternetAvailable(requireContext())) {
+                    etNsrsId.apply {
+                        (this.parent.parent as TextInputLayout).error = "NSRS ID is required!"
+                    }
+                } else if (password.isEmpty()) {
+                    etPassword.apply {
+                        (this.parent.parent as TextInputLayout).error = "Password is required!"
+                    }
+                } /*else if (!passwordPattern.matches(password)) {
+                    etPassword.apply {
+                        (this.parent.parent as TextInputLayout).error = "Min 8 chars required, with upper, lower, number & symbol."
+                    }
+                }*/ else if (password.length<8) {
+                    etPassword.apply {
+                        (this.parent.parent as TextInputLayout).error = "Minimum 8 characters required!"
+                    }
+                } else if (!NetworkUtils.isInternetAvailable(requireContext())) {
                     NetworkUtils.askToEnableInternet(requireContext())
-                }
-                else {
+                } else {
 //                    authViewModel.login(LoginReq(countryCode = countryCode, phone = phoneNumber))
 
+                    UtilsFunctions.morphToProgress(tvMain, lpbProgress)
+                    cvMainBtn.isEnabled = false
 
 
-                }*/
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        UtilsFunctions.morphToTick(ivTick, cardView = cvMainBtn)
+
+                        Handler(Looper.getMainLooper()).postDelayed(
+                            {
+                                ivTick.isVisible = false
+                                lpbProgress.isVisible = false
+                                tvMain.text = "LOG IN"
+                                cvMainBtn.isEnabled = true
+                            }, 1000
+                        )
+                    }, 2000)
+
+                }
 
 
             }
