@@ -42,12 +42,23 @@
                 android:textColor="@color/white"
                 android:textStyle="normal" />
 
-            <com.google.android.material.imageview.ShapeableImageView
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_40sdp"
-                android:layout_marginBottom="@dimen/_20sdp"
-                android:src="@drawable/ic_login_sticker" />
+                android:layout_marginBottom="@dimen/_20sdp">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/_0sdp"
+                    android:layout_height="@dimen/_0sdp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_login_sticker"
+                    app:layout_constraintBaseline_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="5:2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilNsrsId"
@@ -120,8 +131,7 @@
                     android:gravity="center"
                     android:paddingHorizontal="@dimen/_20sdp"
                     android:paddingVertical="@dimen/_15sdp"
-                    android:text="LOG IN"
-                    android:textAllCaps="true"
+                    android:text="Log In"
                     android:textColor="@color/white"
                     android:textSize="@dimen/btn_text_size"
                     android:textStyle="bold" />
@@ -170,7 +180,6 @@
                     android:paddingHorizontal="@dimen/_20sdp"
                     android:paddingVertical="@dimen/_15sdp"
                     android:text="Explore AMS"
-                    android:textAllCaps="true"
                     android:textColor="@color/white"
                     android:textSize="@dimen/btn_text_size"
                     android:textStyle="bold" />
@@ -194,8 +203,8 @@
                     android:id="@+id/tvSignUp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/register"
-                    android:textColor="@color/default_text_color"
+                    android:text="Register"
+                    android:textColor="@color/clickable_text_color"
                     android:textSize="@dimen/tv_label_size"
                     android:textStyle="bold" />
 

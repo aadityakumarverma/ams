@@ -3,15 +3,12 @@ package com.ams.views.fragments.auth
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
@@ -21,9 +18,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.core.os.postDelayed
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import com.ams.R
 import com.ams.databinding.FragmentLoginBinding
 import com.ams.utils.MyColor
@@ -32,10 +30,9 @@ import com.ams.utils.SharedPreferencesHelper
 import com.ams.utils.UtilsFunctions
 import com.ams.utils.UtilsFunctions.setOnClickListeners
 import com.ams.utils.UtilsFunctions.setTextAndFocusChangeListener
-import com.ams.utils.UtilsFunctions.showToast
+import com.ams.views.activities.MainActivity
 import com.ams.views.activities.MainActivity.Companion.mySystemBars
 import com.google.android.material.textfield.TextInputLayout
-import kotlinx.coroutines.delay
 
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
@@ -47,6 +44,8 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentLoginBinding.inflate(layoutInflater)
+        sharedPreferencesHelper = SharedPreferencesHelper(requireContext())
+        navController = findNavController()
 
         binding.apply {
             llParent.setPadding(0, mySystemBars.top,0,0)
@@ -66,7 +65,14 @@ class LoginFragment : Fragment() {
 
         binding.apply {
             tvForgotPass.setOnClickListeners {
-
+                val nsrsId = etNsrsId.text.toString()
+                if (nsrsId.isEmpty()) {
+                    etNsrsId.apply {
+                        (this.parent.parent as TextInputLayout).error = "NSRS ID is required!"
+                    }
+                } else {
+                    navController?.navigate(R.id.VerifyOtpFragment)
+                }
             }
             tvSignUp.setOnClickListeners {
 
@@ -114,7 +120,7 @@ class LoginFragment : Fragment() {
                             {
                                 ivTick.isVisible = false
                                 lpbProgress.isVisible = false
-                                tvMain.text = "LOG IN"
+                                tvMain.text = "Log In"
                                 cvMainBtn.isEnabled = true
                             }, 1000
                         )

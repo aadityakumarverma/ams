@@ -14,4 +14,9 @@
         android:name="com.ams.views.fragments.auth.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/VerifyOtpFragment"
+        android:name="com.ams.views.fragments.auth.VerifyOtpFragment"
+        android:label="fragment_verify_otp"
+        tools:layout="@layout/fragment_verify_otp" />
 </navigation>
