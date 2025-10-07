@@ -130,6 +130,10 @@ class LoginFragment : Fragment() {
 
 
             }
+
+            cvExploreBtn.setOnClickListeners {
+                navController?.navigate(R.id.HomeFragment)
+            }
         }
     }
 

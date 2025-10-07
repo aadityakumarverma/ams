@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:context=".views.fragments.home.HomeFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clHomeHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_vertical"
+        android:elevation="@dimen/_1sdp"
+        android:orientation="horizontal">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivProfilePic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:elevation="@dimen/_0sdp"
+            android:background="#FFD8E1"
+            app:contentPadding="@dimen/_10sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_profile"
+            android:transitionName="profile_pic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/RoundedSquare7sdp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivProfilePic"
+            app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:id="@+id/tvUserName"
+                style="@style/text_style_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="User Name"
+                android:textColor="@color/default_text_color"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/text_style_normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ATHLETE"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/tv_smallest_size"
+                android:textStyle="normal" />
+        </LinearLayout>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/app_logo"
+            android:transitionName="app_logo"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivNotificationBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:adjustViewBounds="true"
+            android:background="@color/white"
+            android:paddingVertical="@dimen/_5sdp"
+            android:paddingStart="@dimen/_1sdp"
+            android:paddingEnd="@dimen/_6sdp"
+            android:src="@drawable/ic_notification"
+            android:visibility="visible"
+            app:contentPadding="@dimen/_7sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/RoundedSquare7sdp"
+            app:strokeColor="@color/light_gray"
+            app:strokeWidth="@dimen/_1sdp" />
+        <TextView
+            android:id="@+id/tvNotificationUnreadCount"
+            style="@style/text_style_normal"
+            android:layout_width="@dimen/_8sdp"
+            android:layout_height="@dimen/_8sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/bg_cornered5"
+            android:backgroundTint="@color/red"
+            android:elevation="@dimen/_5sdp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/tv_smallest_size"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/ivNotificationBtn"
+            app:layout_constraintTop_toTopOf="@+id/ivNotificationBtn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/home_nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/clHomeHeader"
+        android:layout_marginBottom="@dimen/_25sdp"
+        android:layout_weight="1"
+        app:defaultNavHost="false"
+        app:navGraph="@navigation/home_nav_graph" />
+
+
+    <LinearLayout
+        android:id="@+id/llBottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_nav_top_left_corner">
+            <LinearLayout
+                android:id="@+id/llNavHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_5sdp">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivNavHome"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:src="@drawable/ic_nav_home"
+                    android:tint="@color/changeable_nav_text_color" />
+                <TextView
+                    android:id="@+id/tvNavHome"
+                    style="@style/text_style_bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:text="HOME"
+                    android:textColor="@color/changeable_nav_text_color"
+                    android:textSize="@dimen/tv_small_size" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_nav_no_corner">
+            <LinearLayout
+                android:id="@+id/llNavMyZone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_5sdp">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivNavMyZone"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:src="@drawable/ic_nav_my_zone"
+                    android:tint="@color/changeable_nav_text_color" />
+                <TextView
+                    android:id="@+id/tvNavMyZone"
+                    style="@style/text_style_bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:text="My Zone"
+                    android:textColor="@color/changeable_nav_text_color"
+                    android:textSize="@dimen/tv_small_size" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_nav_center">
+            <LinearLayout
+                android:id="@+id/llNavAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_10sdp">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivNavAdd"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:gravity="center"
+                    app:contentPadding="@dimen/_10sdp"
+                    app:shapeAppearance="@style/Circular"
+                    android:background="@drawable/bg_gradient_btn"
+                    android:src="@drawable/ic_add"
+                    android:tintMode="multiply" />
+                <TextView
+                    android:id="@+id/tvNavAdd"
+                    style="@style/text_style_bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:text=""
+                    android:textColor="@color/changeable_nav_text_color"
+                    android:textSize="@dimen/tv_small_size" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_nav_no_corner">
+
+            <LinearLayout
+                android:id="@+id/llNavMyDiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_5sdp">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivNavMyDiet"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:src="@drawable/ic_nav_my_diet"
+                    android:tint="@color/changeable_nav_text_color" />
+                <TextView
+                    android:id="@+id/tvNavMyDiet"
+                    style="@style/text_style_bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:text="MY DIET"
+                    android:textColor="@color/changeable_nav_text_color"
+                    android:textSize="@dimen/tv_small_size" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_nav_top_right_corner">
+            <LinearLayout
+                android:id="@+id/llNavReports"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_5sdp">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivNavReports"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:src="@drawable/ic_nav_reports"
+                    android:tint="@color/changeable_nav_text_color" />
+                <TextView
+                    android:id="@+id/tvNavReports"
+                    style="@style/text_style_bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:text="REPORTS"
+                    android:textColor="@color/changeable_nav_text_color"
+                    android:textSize="@dimen/tv_small_size" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+

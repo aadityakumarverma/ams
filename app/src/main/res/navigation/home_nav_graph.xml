@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/NavHomeFragment">
+
+    <fragment
+        android:id="@+id/NavHomeFragment"
+        android:name="com.ams.views.fragments.home.NavHomeFragment"
+        android:label="fragment_nav_home"
+        tools:layout="@layout/fragment_nav_home" />
+    <fragment
+        android:id="@+id/NavMyZoneFragment"
+        android:name="com.ams.views.fragments.home.NavMyZoneFragment"
+        android:label="fragment_nav_my_zone"
+        tools:layout="@layout/fragment_nav_my_zone" />
+    <fragment
+        android:id="@+id/NavAddFragment"
+        android:name="com.ams.views.fragments.home.NavAddFragment"
+        android:label="fragment_nav_add"
+        tools:layout="@layout/fragment_nav_add" />
+    <fragment
+        android:id="@+id/NavMyDietFragment"
+        android:name="com.ams.views.fragments.home.NavMyDietFragment"
+        android:label="fragment_nav_my_diet"
+        tools:layout="@layout/fragment_nav_my_diet" />
+    <fragment
+        android:id="@+id/NavReportsFragment"
+        android:name="com.ams.views.fragments.home.NavReportsFragment"
+        android:label="fragment_nav_reports"
+        tools:layout="@layout/fragment_nav_reports" />
+
+</navigation>

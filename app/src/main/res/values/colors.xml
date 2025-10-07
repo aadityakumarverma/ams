@@ -4,13 +4,15 @@
     <color name="white">#FFFFFFFF</color>
     <color name="btn_light_blue">#56cbff</color>
     <color name="btn_dark_blue">#546cde</color>
+    <color name="light_gray">#D8D8D8</color>
     <color name="app_dark">#546cde</color>
-    <color name="app_highlight">#546cde</color>
+    <color name="app_highlight">#50546cde</color>
     <color name="app_light">#56cbff</color>
     <color name="app_gray">#6C7278</color>
     <color name="btn_gray">#4e4e4e</color>
     <color name="default_text_color">#0A1629</color>
     <color name="clickable_text_color">#547BE3</color>
+    <color name="bg_gray">#eaf9f9</color>
     <color name="default_ic_color">#3A3A3A</color>
     <color name="transparent">@android:color/transparent</color>
     <color name="red">#E62112</color>

@@ -19,4 +19,15 @@
         android:name="com.ams.views.fragments.auth.VerifyOtpFragment"
         android:label="fragment_verify_otp"
         tools:layout="@layout/fragment_verify_otp" />
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.ams.views.fragments.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/NotificationFragment"
+        android:name="com.ams.views.fragments.home.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+
 </navigation>

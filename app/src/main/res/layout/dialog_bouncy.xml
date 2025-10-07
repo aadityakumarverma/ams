@@ -178,7 +178,7 @@
                 android:text="OTP Received? "
                 android:textStyle="bold" />
             <TextView
-                android:id="@+id/tvSignUp"
+                android:id="@+id/tvResendOtp"
                 style="@style/text_style_normal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -161,7 +161,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvSecondBtn"
+                android:id="@+id/cvExploreBtn"
                 style="@style/btn_style"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/btn_height"
@@ -171,7 +171,7 @@
                 app:cardElevation="@dimen/_0sdp"
                 app:cardMaxElevation="@dimen/_0sdp">
                 <TextView
-                    android:id="@+id/tvSecond"
+                    android:id="@+id/tvExplore"
                     style="@style/text_style_normal"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_50sdp"

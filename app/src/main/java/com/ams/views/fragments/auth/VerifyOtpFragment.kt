@@ -1,10 +1,14 @@
 package com.ams.views.fragments.auth
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
@@ -23,15 +27,16 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.viewinterop.AndroidView
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.ams.R
 import com.ams.databinding.DialogBouncyBinding
 import com.ams.databinding.FragmentVerifyOtpBinding
-import com.ams.utils.DialogUtils.BouncyDialog
 import com.ams.utils.DialogUtils.BouncyOverlay
 import com.ams.utils.MyColor
 import com.ams.utils.SharedPreferencesHelper
+import com.ams.utils.UtilsFunctions.setOnClickListeners
 import com.ams.utils.sdp
 import com.ams.views.activities.MainActivity.Companion.mySystemBars
 
@@ -39,6 +44,9 @@ class VerifyOtpFragment : Fragment() {
     private lateinit var binding: FragmentVerifyOtpBinding
     lateinit var sharedPreferencesHelper: SharedPreferencesHelper
     var navController: NavController? = null
+
+
+    lateinit var editTexts : List<EditText>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -64,9 +72,55 @@ class VerifyOtpFragment : Fragment() {
                     AndroidView(
                         modifier = Modifier.fillMaxWidth().padding(20.sdp),
                         factory = { inflaterContext ->
-                            DialogBouncyBinding.inflate(
+                            val dialogBinding = DialogBouncyBinding.inflate(
                                 LayoutInflater.from(inflaterContext)
-                            ).root
+                            )
+
+                            dialogBinding.apply {
+                                editTexts = listOf(etOtp1, etOtp2, etOtp3, etOtp4, etOtp5, etOtp6)
+                                for (i in editTexts.indices) {
+                                    val currentEditText = editTexts[i]
+                                    val nextEditText = if (i < editTexts.lastIndex) editTexts[i + 1] else null
+                                    val previousEditText = if (i > 0) editTexts[i - 1] else null
+
+                                    // Add TextWatcher
+                                    currentEditText.addTextChangedListener(object : TextWatcher {
+                                        override fun afterTextChanged(editable: Editable) {
+                                            if (editable.length == 1 && nextEditText != null) {
+                                                nextEditText.requestFocus()
+                                            }
+                                        }
+
+                                        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+                                        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                                            // Reset background when typing
+                                            currentEditText.background = ContextCompat.getDrawable(requireContext(), R.drawable.et_bg_otp)
+
+                                            currentEditText.isSelected = currentEditText.text.toString().trim().isNotEmpty()
+                                        }
+                                    })
+
+
+                                    // Add OnKeyListener
+                                    currentEditText.setOnKeyListener { v, keyCode, event ->
+                                        if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_DEL && currentEditText.text.isEmpty() && previousEditText != null) {
+                                            previousEditText.text = null
+                                            previousEditText.requestFocus()
+                                            true
+                                        } else {
+                                            false
+                                        }
+                                    }
+                                }
+
+
+                                tvResendOtp.setOnClickListeners {
+                                    navController?.popBackStack()
+                                }
+                            }
+
+                            dialogBinding.root
                         }
                     )
                 }
@@ -84,6 +138,7 @@ class VerifyOtpFragment : Fragment() {
 
 
         binding.apply {
+
 
         }
     }
