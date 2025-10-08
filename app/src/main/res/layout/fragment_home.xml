@@ -114,7 +114,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/clHomeHeader"
-        android:layout_marginBottom="@dimen/_45sdp"
+        android:layout_marginBottom="@dimen/_65sdp"
         android:layout_weight="1"
         app:defaultNavHost="false"
         app:navGraph="@navigation/home_nav_graph" />
@@ -157,7 +157,7 @@
                     android:lines="1"
                     android:text="HOME"
                     android:textColor="@color/changeable_nav_text_color"
-                    android:textSize="@dimen/tv_small_size" />
+                    android:textSize="@dimen/tv_smallest_size" />
             </LinearLayout>
 
         </LinearLayout>
@@ -189,8 +189,9 @@
                     android:gravity="center"
                     android:lines="1"
                     android:text="My Zone"
+                    android:textAllCaps="true"
                     android:textColor="@color/changeable_nav_text_color"
-                    android:textSize="@dimen/tv_small_size" />
+                    android:textSize="@dimen/tv_smallest_size" />
             </LinearLayout>
         </LinearLayout>
 
@@ -209,10 +210,10 @@
                 android:paddingBottom="@dimen/_10sdp">
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/ivNavAdd"
-                    android:layout_width="@dimen/_35sdp"
-                    android:layout_height="@dimen/_35sdp"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
                     android:gravity="center"
-                    app:contentPadding="@dimen/_10sdp"
+                    app:contentPadding="@dimen/_15sdp"
                     app:shapeAppearance="@style/Circular"
                     android:background="@drawable/bg_gradient_btn"
                     android:src="@drawable/ic_add"
@@ -226,7 +227,7 @@
                     android:lines="1"
                     android:text=""
                     android:textColor="@color/changeable_nav_text_color"
-                    android:textSize="@dimen/tv_small_size" />
+                    android:textSize="@dimen/tv_smallest_size" />
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -258,7 +259,7 @@
                     android:lines="1"
                     android:text="MY DIET"
                     android:textColor="@color/changeable_nav_text_color"
-                    android:textSize="@dimen/tv_small_size" />
+                    android:textSize="@dimen/tv_smallest_size" />
             </LinearLayout>
         </LinearLayout>
 
@@ -290,7 +291,7 @@
                     android:lines="1"
                     android:text="REPORTS"
                     android:textColor="@color/changeable_nav_text_color"
-                    android:textSize="@dimen/tv_small_size" />
+                    android:textSize="@dimen/tv_smallest_size" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

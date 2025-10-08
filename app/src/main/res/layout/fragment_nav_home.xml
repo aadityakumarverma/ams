@@ -277,17 +277,27 @@
                                 android:layout_height="wrap_content"
                                 android:src="@drawable/ic_heart_beat" />
                         </LinearLayout>
-                        <TextView
-                            style="@style/text_style_normal"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableStart="@drawable/ic_tick"
-                            android:drawablePadding="@dimen/_5sdp"
                             android:gravity="center_vertical"
-                            android:text="Health Range"
-                            android:textColor="@color/default_text_color"
-                            android:textSize="@dimen/tv_smallest_size"
-                            android:textStyle="bold" />
+                            android:orientation="horizontal">
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:padding="@dimen/_2sdp"
+                                android:src="@drawable/ic_tick"/>
+                            <TextView
+                                style="@style/text_style_normal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:includeFontPadding="false"
+                                android:text="Health Range"
+                                android:textColor="@color/default_text_color"
+                                android:textSize="@dimen/tv_smallest_size"
+                                android:textStyle="bold" />
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -594,7 +604,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/_5sdp"
-                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:orientation="horizontal">
                         <TextView
                             style="@style/text_style_normal"
@@ -652,7 +662,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/_5sdp"
-                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:orientation="horizontal">
                         <TextView
                             style="@style/text_style_normal"
@@ -710,7 +720,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/_5sdp"
-                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:orientation="horizontal">
                         <TextView
                             style="@style/text_style_normal"
@@ -769,6 +779,28 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
+            <TextView
+                style="@style/text_style_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:text="Upcoming Competitions"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/tv_label_size"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvUpcomingCompetitions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingHorizontal="@dimen/_5sdp"
+                tools:itemCount="1"
+                tools:listitem="@layout/layout_upcoming_competitions" />
+
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

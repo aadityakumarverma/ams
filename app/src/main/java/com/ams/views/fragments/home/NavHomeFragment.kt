@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ams.R
 import com.ams.databinding.FragmentNavHomeBinding
 import com.ams.utils.SharedPreferencesHelper
+import com.ams.views.adapters.UpcomingCompetitionsAdapter
 
 class NavHomeFragment : Fragment() {
     lateinit var binding: FragmentNavHomeBinding
@@ -24,10 +26,30 @@ class NavHomeFragment : Fragment() {
         sharedPreferencesHelper = SharedPreferencesHelper(requireContext())
         navController = findNavController()
 
-        binding.apply {
+        setupRecyclerViews()
 
+        binding.apply {
+            (rvUpcomingCompetitions.adapter as UpcomingCompetitionsAdapter).apply {
+                clearAll()
+                addAll(mutableListOf(R.drawable.png_pattern_1, R.drawable.png_pattern_2, R.drawable.png_pattern_3))
+            }
         }
 
         return binding.root
     }
+
+    private fun setupRecyclerViews() {
+        binding.apply {
+            rvUpcomingCompetitions.apply {
+                layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                adapter = UpcomingCompetitionsAdapter(requireContext(), mutableListOf(), object : UpcomingCompetitionsAdapter.OnCompetitionClickListener {
+                    override fun onCompetitionClick(item: String) {
+
+                    }
+                })
+            }
+        }
+    }
+
+
 }
