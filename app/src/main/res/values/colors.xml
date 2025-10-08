@@ -35,4 +35,11 @@
     <color name="tag_red">#ED4337</color>
     <color name="bg_green">#C8FFD7</color>
     <color name="text_green">#60C852</color>">
+
+
+    <color name="gold">#F9C04F</color>">
+    <color name="silver">#C3C3C3</color>">
+    <color name="bronze">#CD7040</color>">
+
+
 </resources>
