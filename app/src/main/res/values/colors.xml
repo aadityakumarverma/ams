@@ -2,6 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="vibrant_mint">#00FFE5</color>
+    <color name="lightest_gray">#FDFDFD</color>
     <color name="btn_light_blue">#56cbff</color>
     <color name="btn_dark_blue">#546cde</color>
     <color name="light_gray">#D8D8D8</color>
@@ -13,7 +15,7 @@
     <color name="default_text_color">#0A1629</color>
     <color name="clickable_text_color">#547BE3</color>
     <color name="bg_gray">#eaf9f9</color>
-    <color name="default_ic_color">#3A3A3A</color>
+    <color name="default_ic_color">#161616</color>
     <color name="transparent">@android:color/transparent</color>
     <color name="red">#E62112</color>
 
@@ -30,5 +32,7 @@
     <color name="tag_green">#33a151</color>
     <color name="tag_blue">#0092E5</color>
     <color name="tag_gray">#a8a8a8</color>
-    <color name="tag_red">#ED4337</color>">
+    <color name="tag_red">#ED4337</color>
+    <color name="bg_green">#C8FFD7</color>
+    <color name="text_green">#60C852</color>">
 </resources>

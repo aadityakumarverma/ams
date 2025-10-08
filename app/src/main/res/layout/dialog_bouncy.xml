@@ -22,7 +22,7 @@
                 android:layout_marginTop="@dimen/_20sdp"
                 android:adjustViewBounds="true"
                 android:src="@drawable/png_otp_sticker"
-                app:layout_constraintBaseline_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="4:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

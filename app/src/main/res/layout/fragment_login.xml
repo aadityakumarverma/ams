@@ -52,7 +52,7 @@
                     android:layout_height="@dimen/_0sdp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/ic_login_sticker"
-                    app:layout_constraintBaseline_toBottomOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="5:2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
