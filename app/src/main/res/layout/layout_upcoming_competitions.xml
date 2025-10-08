@@ -98,7 +98,7 @@
                     android:paddingVertical="@dimen/_10sdp"
                     android:text="@string/date_format"
                     android:textColor="#80000000"
-                    android:textSize="@dimen/tv_label_size"
+                    android:textSize="@dimen/tv_small_size"
                     android:textStyle="bold" />
                 <com.google.android.material.imageview.ShapeableImageView
                     android:layout_width="@dimen/_50sdp"
