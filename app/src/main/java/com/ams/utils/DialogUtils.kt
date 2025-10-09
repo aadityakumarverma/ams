@@ -63,10 +63,6 @@ object DialogUtils {
                                 LayoutInflater.from(inflaterContext)
                             )
 
-                            // Example: set button click listener
-//                            binding.closeButton.setOnClickListener {
-//                                onDismiss()
-//                            }
 
                             binding.root
                         }

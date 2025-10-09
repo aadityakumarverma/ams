@@ -30,4 +30,54 @@
         android:label="fragment_notification"
         tools:layout="@layout/fragment_notification" />
 
+    <fragment
+        android:id="@+id/MyProfileFragment"
+        android:name="com.ams.views.fragments.home.MyProfileFragment"
+        android:label="fragment_my_profile"
+        tools:layout="@layout/fragment_my_profile" />
+
+    <fragment
+        android:id="@+id/ReportsDetailsFragment"
+        android:name="com.ams.views.fragments.reports.ReportsDetailsFragment"
+        android:label="fragment_reports_details"
+        tools:layout="@layout/fragment_reports_details" />
+
+    <fragment
+        android:id="@+id/ReportsBiochemicalFragment"
+        android:name="com.ams.views.fragments.reports.ReportsBiochemicalFragment"
+        android:label="fragment_reports_biochemical"
+        tools:layout="@layout/fragment_reports_biochemical" />
+
+    <fragment
+        android:id="@+id/ReportsHematologyFragment"
+        android:name="com.ams.views.fragments.reports.ReportsHematologyFragment"
+        android:label="fragment_reports_hematology"
+        tools:layout="@layout/fragment_reports_hematology" />
+
+    <fragment
+        android:id="@+id/ReportsUrinalysisFragment"
+        android:name="com.ams.views.fragments.reports.ReportsUrinalysisFragment"
+        android:label="fragment_reports_urinalysis"
+        tools:layout="@layout/fragment_reports_urinalysis" />
+
+    <fragment
+        android:id="@+id/CarePlanFragment"
+        android:name="com.ams.views.fragments.sessions.CarePlanFragment"
+        android:label="fragment_care_plan"
+        tools:layout="@layout/fragment_care_plan" />
+
+    <fragment
+        android:id="@+id/UpperBodyStrengthFragment"
+        android:name="com.ams.views.fragments.sessions.UpperBodyStrengthFragment"
+        android:label="fragment_upper_body_strength"
+        tools:layout="@layout/fragment_upper_body_strength" />
+
+    <fragment
+        android:id="@+id/TherapySessionsFragment"
+        android:name="com.ams.views.fragments.sessions.TherapySessionsFragment"
+        android:label="fragment_therapy_sessions"
+        tools:layout="@layout/fragment_therapy_sessions" />
+
+
+
 </navigation>

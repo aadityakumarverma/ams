@@ -1,14 +1,395 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llParent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".views.fragments.home.MyProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@color/white"
+        android:elevation="@dimen/_10sdp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:paddingVertical="@dimen/_5sdp">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:adjustViewBounds="true"
+            android:background="?selectableItemBackground"
+            android:src="@drawable/ic_arrow_back"
+            android:visibility="visible"
+            app:contentPaddingBottom="@dimen/_12sdp"
+            app:contentPaddingEnd="@dimen/_9sdp"
+            app:contentPaddingStart="@dimen/_9sdp"
+            app:contentPaddingTop="@dimen/_12sdp"
+            app:shapeAppearance="@style/Circular" />
+        <TextView
+            style="@style/title_style_bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_2sdp"
+            android:text="My Profile"
+            android:textColor="@color/default_text_color"
+            android:textSize="@dimen/et_text_size"
+            android:textStyle="bold" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivRightBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:adjustViewBounds="true"
+            android:background="?selectableItemBackground"
+            android:src="@drawable/ic_arrow_back"
+            android:visibility="invisible"
+            app:contentPaddingBottom="@dimen/_12sdp"
+            app:contentPaddingEnd="@dimen/_9sdp"
+            app:contentPaddingStart="@dimen/_9sdp"
+            app:contentPaddingTop="@dimen/_12sdp"
+            app:shapeAppearance="@style/Circular" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:fillViewport="true"
+        android:clipToPadding="false">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-</FrameLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginVertical="@dimen/_20sdp"
+                app:cardBackgroundColor="@color/transparent"
+                app:cardCornerRadius="@dimen/_0sdp"
+                app:cardElevation="@dimen/_0sdp">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_1sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@color/transparent"
+                    android:transitionName="profile_pic"
+                    app:shapeAppearance="@style/Circular"
+                    app:strokeColor="@color/app_gray"
+                    app:strokeWidth="@dimen/_1sdp" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivProfilePic"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_gray_profile"
+                    android:transitionName="profile_pic"
+                    app:shapeAppearance="@style/Circular" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivUploadPic"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_gravity="end|bottom"
+                    android:background="@color/black"
+                    android:padding="@dimen/_1sdp"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_camera"
+                    app:contentPadding="@dimen/_7sdp"
+                    app:shapeAppearance="@style/Circular"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="@dimen/_1sdp" />
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tvUserName"
+                style="@style/text_style_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:text="User Name"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/tv_name_size"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_20sdp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:background="#E3E1FF"
+                        android:padding="@dimen/_1sdp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_calendar"
+                        app:contentPadding="@dimen/_7sdp"
+                        app:shapeAppearance="@style/Circular"
+                        app:strokeColor="@color/white"
+                        app:strokeWidth="@dimen/_1sdp" />
+
+                    <TextView
+                        style="@style/text_style_bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="24 yrs"
+                        android:textColor="@color/default_text_color"
+                        android:textSize="@dimen/tv_small_size"
+                        android:textStyle="bold" />
+                    <TextView
+                        style="@style/text_style_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Age"
+                        android:textColor="@color/helper_gray"
+                        android:textSize="@dimen/tv_small_size"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:background="#FFE1E1"
+                        android:padding="@dimen/_1sdp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_run"
+                        app:contentPadding="@dimen/_7sdp"
+                        app:shapeAppearance="@style/Circular"
+                        app:strokeColor="@color/white"
+                        app:strokeWidth="@dimen/_1sdp" />
+
+                    <TextView
+                        style="@style/text_style_bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="RD44034M98"
+                        android:textColor="@color/default_text_color"
+                        android:textSize="@dimen/tv_small_size"
+                        android:textStyle="bold" />
+                    <TextView
+                        style="@style/text_style_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NSRS ID"
+                        android:textColor="@color/helper_gray"
+                        android:textSize="@dimen/tv_small_size"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:background="#BDEBA7"
+                        android:padding="@dimen/_1sdp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_arena"
+                        app:contentPadding="@dimen/_7sdp"
+                        app:shapeAppearance="@style/Circular"
+                        app:strokeColor="@color/white"
+                        app:strokeWidth="@dimen/_1sdp" />
+
+                    <TextView
+                        style="@style/text_style_bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="Athletics"
+                        android:textColor="@color/default_text_color"
+                        android:textSize="@dimen/tv_small_size"
+                        android:textStyle="bold" />
+                    <TextView
+                        style="@style/text_style_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sport"
+                        android:textColor="@color/helper_gray"
+                        android:textSize="@dimen/tv_small_size"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/bg_gray"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_0sdp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/text_style_normal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Center"
+                            android:textColor="@color/helper_gray"
+                            android:textSize="@dimen/tv_small_size"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tvCenter"
+                            style="@style/text_style_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:lines="2"
+                            android:text="NCOE Bangalore"
+                            android:textColor="@color/default_text_color"
+                            android:textSize="@dimen/tv_small_size"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            style="@style/text_style_normal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Weight"
+                            android:textColor="@color/helper_gray"
+                            android:textSize="@dimen/tv_small_size"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tvWeight"
+                            style="@style/text_style_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:text="85 kg"
+                            android:textColor="@color/default_text_color"
+                            android:textSize="@dimen/tv_small_size"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/text_style_normal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Height"
+                            android:textColor="@color/helper_gray"
+                            android:textSize="@dimen/tv_small_size"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tvHeight"
+                            style="@style/text_style_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:lines="2"
+                            android:text="6 ft (1.8 m)"
+                            android:textColor="@color/default_text_color"
+                            android:textSize="@dimen/tv_small_size"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            style="@style/text_style_normal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Gender"
+                            android:textColor="@color/helper_gray"
+                            android:textSize="@dimen/tv_small_size"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tvGender"
+                            style="@style/text_style_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:text="Male"
+                            android:textColor="@color/default_text_color"
+                            android:textSize="@dimen/tv_small_size"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tvPrivacyPolicy"
+                style="@style/text_style_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Privacy Policy"
+                android:textColor="@color/helper_gray"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvLogOut"
+                style="@style/text_style_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginVertical="@dimen/_20sdp"
+                android:drawableStart="@drawable/ic_logout"
+                android:drawablePadding="@dimen/_5sdp"
+                android:drawableTint="@color/red"
+                android:text="Log Out"
+                android:textColor="@color/red"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

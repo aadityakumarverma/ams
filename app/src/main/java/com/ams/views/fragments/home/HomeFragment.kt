@@ -72,10 +72,10 @@ class HomeFragment : Fragment() {
 
         binding.apply {
             ivProfilePic.setOnClickListeners {
-                navController.navigate(R.id.ProfileFragment)
+                navController.navigate(R.id.MyProfileFragment)
             }
             llProfile.setOnClickListeners {
-                navController.navigate(R.id.ProfileFragment)
+                navController.navigate(R.id.MyProfileFragment)
             }
         }
 

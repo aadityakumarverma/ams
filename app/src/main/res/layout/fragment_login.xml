@@ -73,8 +73,9 @@
                     android:id="@+id/etNsrsId"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:digits="1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     android:imeOptions="actionNext"
-                    android:inputType="textCapWords"
+                    android:inputType="textCapCharacters"
                     android:lines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>

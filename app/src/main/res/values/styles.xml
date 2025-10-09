@@ -5,6 +5,7 @@
         <item name="android:fontFamily">@font/poppins_bold</item>
         <item name="fontFamily">@font/poppins_bold</item>
         <item name="android:textSize">@dimen/btn_text_size</item>
+        <item name="android:includeFontPadding">false</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:layout_marginHorizontal">@dimen/_20sdp</item>
         <item name="android:layout_marginVertical">@dimen/_20sdp</item>
@@ -17,10 +18,19 @@
         <item name="android:includeFontPadding">false</item>
         <item name="android:textStyle">bold</item>
     </style>
+    <style name="title_style_bold">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">@dimen/et_text_size</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textStyle">bold</item>
+    </style>
     <style name="text_style_normal">
         <item name="android:fontFamily">@font/poppins_regular</item>
         <item name="fontFamily">@font/poppins_regular</item>
         <item name="android:textStyle">normal</item>
+        <item name="android:paddingVertical">@dimen/_2sdp</item>
+        <item name="android:includeFontPadding">false</item>
         <item name="android:textSize">@dimen/tv_small_size</item>
         <item name="android:textColor">@color/default_text_color</item>
     </style>
