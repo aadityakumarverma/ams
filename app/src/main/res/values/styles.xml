@@ -45,6 +45,13 @@
     </style>
 
 
+    <style name="MyTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+
 
     <style name="Circular">
         <item name="cornerSize">50%</item>

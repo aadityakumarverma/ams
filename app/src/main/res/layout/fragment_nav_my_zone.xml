@@ -5,16 +5,18 @@
     android:id="@+id/parentView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/bg_blue"
     android:fillViewport="true"
     android:orientation="vertical"
     tools:context=".views.fragments.home.NavMyZoneFragment">
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        android:paddingBottom="@dimen/nav_padding">
 
         <LinearLayout
             android:layout_width="match_parent"

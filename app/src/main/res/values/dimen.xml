@@ -35,4 +35,6 @@
     <dimen name="btn_height">@dimen/_50sdp</dimen>
     <dimen name="btn_text_size">@dimen/_12sdp</dimen>
 
+    <dimen name="nav_padding">@dimen/_50sdp</dimen>
+
 </resources>
