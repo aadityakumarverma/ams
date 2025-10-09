@@ -68,8 +68,15 @@ class HomeFragment : Fragment() {
                 setSelectedNav(4)
             }
 
+        }
 
-
+        binding.apply {
+            ivProfilePic.setOnClickListeners {
+                navController.navigate(R.id.ProfileFragment)
+            }
+            llProfile.setOnClickListeners {
+                navController.navigate(R.id.ProfileFragment)
+            }
         }
 
     }
