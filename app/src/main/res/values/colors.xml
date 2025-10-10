@@ -13,9 +13,9 @@
     <color name="app_gray">#6C7278</color>
     <color name="btn_gray">#4e4e4e</color>
     <color name="default_text_color">#0A1629</color>
-    <color name="clickable_text_color">#547BE3</color>
+    <color name="selected_color">#5494EB</color>
     <color name="bg_blue">#F4F6FA</color>
-    <color name="bg_gray">#F7F7F7</color>
+    <color name="bg_gray">#F6F6F6</color>
     <color name="default_ic_color">#161616</color>
     <color name="transparent">@android:color/transparent</color>
     <color name="red">#E62112</color>

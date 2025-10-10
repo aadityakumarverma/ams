@@ -205,7 +205,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Register"
-                    android:textColor="@color/clickable_text_color"
+                    android:textColor="@color/selected_color"
                     android:textSize="@dimen/tv_label_size"
                     android:textStyle="bold" />
 

@@ -10,11 +10,129 @@
     android:orientation="vertical"
     tools:context=".views.fragments.home.NavMyDietFragment">
 
-    <TextView
-        style="@style/text_style_normal"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="My Diet" />
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tvSelectedDate"
+            style="@style/text_style_bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:text="August 2025"
+            android:textColor="@color/default_text_color"
+            android:textStyle="bold" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:background="@color/white"
+            android:padding="@dimen/_1sdp"
+            android:src="@drawable/ic_arrow_left"
+            app:contentPaddingBottom="@dimen/_6sdp"
+            app:contentPaddingEnd="@dimen/_8sdp"
+            app:contentPaddingStart="@dimen/_8sdp"
+            app:contentPaddingTop="@dimen/_6sdp"
+            app:shapeAppearance="@style/Circular"
+            app:strokeColor="@color/app_gray"
+            app:strokeWidth="@dimen/_1sdp" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="@dimen/_1sdp"
+            android:src="@drawable/ic_arrow_right"
+            app:contentPaddingBottom="@dimen/_6sdp"
+            app:contentPaddingEnd="@dimen/_8sdp"
+            app:contentPaddingStart="@dimen/_8sdp"
+            app:contentPaddingTop="@dimen/_6sdp"
+            app:shapeAppearance="@style/Circular"
+            app:strokeColor="@color/app_gray"
+            app:strokeWidth="@dimen/_1sdp" />
+    </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardElevation="@dimen/_0sdp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDayDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_5sdp"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_date" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvDiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/layout_diet"
+                    android:clipToPadding="false"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/nav_padding" />
+                <LinearLayout
+                    android:id="@+id/lpbLoaderBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_70sdp"
+                    android:background="@color/transparent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <include
+                        layout="@layout/loader_bottom_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tvNoDataFound"
+                style="@style/text_style_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="No data found"
+                android:textColor="@color/default_text_color"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 </LinearLayout>
+
+
 

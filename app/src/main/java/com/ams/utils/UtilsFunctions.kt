@@ -131,29 +131,6 @@ object UtilsFunctions {
         val sdf = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
         return sdf.format(calendar.time)
     }
-    fun showDatePickerDialogForStringFormat(context: Context, textView: TextView) {
-        val calendar = Calendar.getInstance()
-        val currentYear = calendar.get(Calendar.YEAR)
-        val currentMonth = calendar.get(Calendar.MONTH)
-        val currentDay = calendar.get(Calendar.DAY_OF_MONTH)
-
-        val datePickerDialog = DatePickerDialog(context,
-            { _, yearF, monthF, dayF ->
-                val selectedCal = Calendar.getInstance().apply {
-                    set(yearF, monthF, dayF)
-                }
-                val sdf = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
-                val formattedDate = sdf.format(selectedCal.time)
-                textView.text = formattedDate
-            },
-            currentYear,
-            currentMonth,
-            currentDay
-        )
-
-        datePickerDialog.datePicker.maxDate = calendar.timeInMillis
-        datePickerDialog.show()
-    }
     @SuppressLint("ConstantLocale")
     private val dateFormat = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault())
 

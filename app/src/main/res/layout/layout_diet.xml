@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_10sdp"
+    android:layout_marginVertical="@dimen/_5sdp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/_15sdp"
+    app:cardElevation="@dimen/_1sdp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:background="@drawable/bg_top_cornered14"
+            android:backgroundTint="@color/bg_gray"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_5sdp">
+            <TextView
+                style="@style/text_style_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="WAKE UP"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/tv_smallest_size"
+                android:textStyle="bold" />
+            <TextView
+                style="@style/text_style_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:background="@drawable/bg_cornered50"
+                android:backgroundTint="@color/selected_color"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_5sdp"
+                android:text="LOG All+"
+                android:textColor="@color/white"
+                android:textSize="@dimen/tv_smallest_size"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0sdp"
+                android:layout_weight="1" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:background="@color/white"
+                app:shapeAppearance="@style/Circular"
+                android:elevation="@dimen/_0sdp"
+                app:contentPadding="@dimen/_5sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_fire"/>
+
+            <TextView
+                style="@style/text_style_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="1/10 Kcal"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/tv_smallest_size"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        style="@style/text_style_bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Jeera, ajwain and saunf water"
+                        android:textColor="@color/default_text_color"
+                        android:textSize="@dimen/tv_small_size"
+                        android:textStyle="bold" />
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="@dimen/_0sdp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:src="@drawable/ic_veg"
+                        app:contentPadding="@dimen/_0sdp" />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/text_style_normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 cup-150ml/1 Kcal. 0.11 gms Protein"
+                    android:textColor="@color/helper_gray"
+                    android:textSize="@dimen/tv_small_size"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:adjustViewBounds="true"
+                android:background="#FFD8E1"
+                android:elevation="@dimen/_0sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/png_diet_placeholder"
+                app:contentPadding="@dimen/_0sdp"
+                app:shapeAppearance="@style/RoundedSquare7sdp" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/text_style_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:gravity="center"
+                android:foreground="@drawable/fg_radius50_stroke1"
+                android:foregroundTint="@color/light_gray"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="LOG+"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/tv_smallest_size"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

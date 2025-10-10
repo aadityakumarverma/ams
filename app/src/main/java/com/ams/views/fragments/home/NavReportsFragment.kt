@@ -84,7 +84,6 @@ class NavReportsFragment : Fragment() {
                 }
             })
 
-
         }
     }
 

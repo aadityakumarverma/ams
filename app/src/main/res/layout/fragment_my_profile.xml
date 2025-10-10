@@ -85,7 +85,6 @@
                     android:padding="@dimen/_1sdp"
                     android:scaleType="centerCrop"
                     android:src="@color/transparent"
-                    android:transitionName="profile_pic"
                     app:shapeAppearance="@style/Circular"
                     app:strokeColor="@color/app_gray"
                     app:strokeWidth="@dimen/_1sdp" />
