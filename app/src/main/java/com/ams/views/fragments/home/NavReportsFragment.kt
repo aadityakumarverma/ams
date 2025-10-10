@@ -9,12 +9,14 @@ import android.widget.LinearLayout
 import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ams.R
 import com.ams.databinding.FragmentNavReportsBinding
 import com.ams.utils.SharedPreferencesHelper
+import com.ams.views.activities.MainActivity.Companion.mySystemBars
 import com.ams.views.adapters.AllReportsAdapter
 import com.google.android.material.tabs.TabLayout
 
@@ -37,11 +39,7 @@ class NavReportsFragment : Fragment() {
     ): View? {
         binding = FragmentNavReportsBinding.inflate(layoutInflater)
         sharedPreferencesHelper = SharedPreferencesHelper(requireContext())
-        navController = findNavController()
-
-        binding.apply {
-
-        }
+        navController = requireActivity().findNavController(R.id.navHostFragmentContainerView)
 
         return binding.root
     }

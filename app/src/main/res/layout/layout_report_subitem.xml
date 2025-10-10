@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/_5sdp">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/line_gray" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_10sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tvSubName"
+                style="@style/text_style_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:text="Hemoglobin (gm%)"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/tv_smallest_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvResult"
+                style="@style/text_style_normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:text="Normal Range - 14-18"
+                android:textColor="@color/app_gray"
+                android:textSize="@dimen/tv_smallest_size"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvCount"
+            style="@style/text_style_bold"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:background="@drawable/bg_cornered5"
+            android:backgroundTint="#50D9B915"
+            android:foreground="@drawable/fg_radius5_stroke1"
+            android:foregroundTint="#D9B915"
+            android:gravity="center"
+            android:text="12"
+            android:textColor="#D9B915"
+            android:textSize="@dimen/tv_smallest_size"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
+

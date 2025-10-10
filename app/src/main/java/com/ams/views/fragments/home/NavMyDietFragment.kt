@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ams.R
@@ -45,7 +46,7 @@ class NavMyDietFragment : Fragment() {
     ): View? {
         binding = FragmentNavMyDietBinding.inflate(layoutInflater)
         sharedPreferencesHelper = SharedPreferencesHelper(requireContext())
-        navController = findNavController()
+        navController = requireActivity().findNavController(R.id.navHostFragmentContainerView)
 
         initialDates = generateDatesForMonth(calendar)
 
@@ -66,6 +67,13 @@ class NavMyDietFragment : Fragment() {
                         rvDayDate.scrollToPosition(index)
                     }
                 }
+            }
+
+
+            swipeRefreshLayout.setOnRefreshListener {
+                currentPage = 1
+                // api call
+                swipeRefreshLayout.isRefreshing = false
             }
 
             (rvDiet.adapter as? AllDietAdapter)?.apply {

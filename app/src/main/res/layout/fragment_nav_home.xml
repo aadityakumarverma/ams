@@ -172,7 +172,7 @@
                                 app:indicatorColor="@color/vibrant_mint"
                                 app:indicatorSize="@dimen/_80sdp"
                                 app:indicatorTrackGapSize="@dimen/_0sdp"
-                                app:trackColor="@color/lightest_gray"
+                                app:trackColor="@color/light_gray"
                                 app:trackCornerRadius="@dimen/_50sdp"
                                 app:trackThickness="@dimen/_8sdp" />
                             <TextView
@@ -525,7 +525,7 @@
                         android:progress="68"
                         app:indicatorColor="#85A93A"
                         app:indicatorTrackGapSize="@dimen/_0sdp"
-                        app:trackColor="@color/lightest_gray"
+                        app:trackColor="@color/light_gray"
                         app:trackCornerRadius="@dimen/_50sdp"
                         app:trackStopIndicatorSize="@dimen/_0sdp"
                         app:trackThickness="@dimen/_8sdp" />

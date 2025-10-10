@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.ams.R
 import com.ams.databinding.FragmentReportsDetailsBinding
 import com.ams.utils.SharedPreferencesHelper
+import com.ams.views.activities.MainActivity.Companion.mySystemBars
 
 class ReportsDetailsFragment : Fragment() {
     lateinit var binding: FragmentReportsDetailsBinding
@@ -24,6 +25,11 @@ class ReportsDetailsFragment : Fragment() {
         sharedPreferencesHelper = SharedPreferencesHelper.getInstance(requireContext())
         navController = findNavController()
 
+        binding.parentView.setPadding(0, mySystemBars.top,0,0)
+
+        binding.apply {
+
+        }
 
         return binding.root
     }

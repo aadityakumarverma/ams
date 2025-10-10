@@ -151,7 +151,7 @@
                 android:layout_marginHorizontal="@dimen/_5sdp"
                 android:gravity="center"
                 android:foreground="@drawable/fg_radius50_stroke1"
-                android:foregroundTint="@color/light_gray"
+                android:foregroundTint="@color/line_gray"
                 android:paddingHorizontal="@dimen/_20sdp"
                 android:paddingVertical="@dimen/_10sdp"
                 android:text="LOG+"

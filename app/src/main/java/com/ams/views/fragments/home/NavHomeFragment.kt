@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ams.R
@@ -24,7 +25,7 @@ class NavHomeFragment : Fragment() {
     ): View? {
         binding = FragmentNavHomeBinding.inflate(layoutInflater)
         sharedPreferencesHelper = SharedPreferencesHelper(requireContext())
-        navController = findNavController()
+        navController = requireActivity().findNavController(R.id.navHostFragmentContainerView)
 
         setupRecyclerViews()
 

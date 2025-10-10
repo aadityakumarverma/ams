@@ -22,6 +22,7 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.core.animation.doOnEnd
 import androidx.core.content.ContextCompat
+import androidx.core.view.isGone
 import androidx.core.widget.NestedScrollView
 import androidx.core.widget.doOnTextChanged
 import androidx.navigation.NavOptions
@@ -232,6 +233,7 @@ object UtilsFunctions {
         }
         valueAnimator.start()
     }
+
 
 
 

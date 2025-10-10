@@ -92,7 +92,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearance="@style/RoundedSquare7sdp"
-            app:strokeColor="@color/light_gray"
+            app:strokeColor="@color/line_gray"
             app:strokeWidth="@dimen/_1sdp" />
         <TextView
             android:id="@+id/tvNotificationUnreadCount"
