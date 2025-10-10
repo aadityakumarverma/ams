@@ -37,81 +37,37 @@ class ReportsHematologyFragment : Fragment() {
         val arrListItem = ArrayList<ReportData>()
 
         arrListItem.apply {
-            add(ReportData("Iron Profile", subData = arrayListOf(
-                ReportData.ReportSubData("Hemoglobin (gm%)","Normal Range - 14-18", "12"),
-                ReportData.ReportSubData("Serum Iron (ug/dl)","Normal Range - 14-18", "25"),
-                ReportData.ReportSubData("Ferritin (ng/mL)","Normal Range - 14-18", "122"),
-                ReportData.ReportSubData("Unsaturated Iron Binding Capacity (ug/dl)","Normal Range - 14-18", "435"),
-                ReportData.ReportSubData("Total Iron Binding Capacity (ug/dl)","Normal Range - 14-18", "65"),
-                ReportData.ReportSubData("Transferring Saturation","Normal Range - 14-18", "35"),
+            add(ReportData("WBC Count", subData = arrayListOf(
+                ReportData.ReportSubData("Neutrophilic(%)","Normal Range - 14-18", "12"),
+                ReportData.ReportSubData("Lymphocytes(%)","Normal Range - 14-18", "12"),
+                ReportData.ReportSubData("Monocyre(%)","Normal Range - 14-18", "12"),
+                ReportData.ReportSubData("Eosinophils(%)","Normal Range - 14-18", "12"),
+                ReportData.ReportSubData("Basophils(%)","Normal Range - 14-18", "12"),
+                ReportData.ReportSubData("Absolute Neutrophil(103 cells/uL)","Normal Range - 14-18", "12"),
+                ReportData.ReportSubData("Absolute Lymphocytes Count (103 cells/uL)","Normal Range - 14-18", "12")
             )))
-            add(ReportData("Metabolites", subData = arrayListOf(
-                ReportData.ReportSubData("Hemoglobin (gm%)","Normal Range - 14-18", "12"),
-                ReportData.ReportSubData("Serum Iron (ug/dl)","Normal Range - 14-18", "25"),
-                ReportData.ReportSubData("Ferritin (ng/mL)","Normal Range - 14-18", "122"),
-                ReportData.ReportSubData("Unsaturated Iron Binding Capacity (ug/dl)","Normal Range - 14-18", "435"),
-                ReportData.ReportSubData("Total Iron Binding Capacity (ug/dl)","Normal Range - 14-18", "65"),
-                ReportData.ReportSubData("Transferring Saturation","Normal Range - 14-18", "35"),
+            add(ReportData("RBC Count", subData = arrayListOf(
+                ReportData.ReportSubData("Neutrophilic(%)","Normal Range - 14-18", "12"),
+                ReportData.ReportSubData("Lymphocytes(%)","Normal Range - 14-18", "12"),
+                ReportData.ReportSubData("Monocyre(%)","Normal Range - 14-18", "12"),
+                ReportData.ReportSubData("Eosinophils(%)","Normal Range - 14-18", "12"),
+                ReportData.ReportSubData("Basophils(%)","Normal Range - 14-18", "12"),
+                ReportData.ReportSubData("Absolute Neutrophil(103 cells/uL)","Normal Range - 14-18", "12"),
+                ReportData.ReportSubData("Absolute Lymphocytes Count (103 cells/uL)","Normal Range - 14-18", "12")
             )))
-            add(ReportData("Lipid Profile", subData = arrayListOf(
-                ReportData.ReportSubData("Hemoglobin (gm%)","Normal Range - 14-18", "12"),
-                ReportData.ReportSubData("Serum Iron (ug/dl)","Normal Range - 14-18", "25"),
-                ReportData.ReportSubData("Ferritin (ng/mL)","Normal Range - 14-18", "122"),
-                ReportData.ReportSubData("Unsaturated Iron Binding Capacity (ug/dl)","Normal Range - 14-18", "435"),
-                ReportData.ReportSubData("Total Iron Binding Capacity (ug/dl)","Normal Range - 14-18", "65"),
-                ReportData.ReportSubData("Transferring Saturation","Normal Range - 14-18", "35"),
+            add(ReportData("Platelets Count", subData = arrayListOf(
+                ReportData.ReportSubData("Neutrophilic(%)","Normal Range - 14-18", "12"),
+                ReportData.ReportSubData("Lymphocytes(%)","Normal Range - 14-18", "12"),
+                ReportData.ReportSubData("Monocyre(%)","Normal Range - 14-18", "12"),
+                ReportData.ReportSubData("Eosinophils(%)","Normal Range - 14-18", "12"),
+                ReportData.ReportSubData("Basophils(%)","Normal Range - 14-18", "12"),
+                ReportData.ReportSubData("Absolute Neutrophil(103 cells/uL)","Normal Range - 14-18", "12"),
+                ReportData.ReportSubData("Absolute Lymphocytes Count (103 cells/uL)","Normal Range - 14-18", "12")
             )))
-            add(ReportData("Enzymes", subData = arrayListOf(
-                ReportData.ReportSubData("Hemoglobin (gm%)","Normal Range - 14-18", "12"),
-                ReportData.ReportSubData("Serum Iron (ug/dl)","Normal Range - 14-18", "25"),
-                ReportData.ReportSubData("Ferritin (ng/mL)","Normal Range - 14-18", "122"),
-                ReportData.ReportSubData("Unsaturated Iron Binding Capacity (ug/dl)","Normal Range - 14-18", "435"),
-                ReportData.ReportSubData("Total Iron Binding Capacity (ug/dl)","Normal Range - 14-18", "65"),
-                ReportData.ReportSubData("Transferring Saturation","Normal Range - 14-18", "35"),
-            )))
-            add(ReportData("Hormones", subData = arrayListOf(
-                ReportData.ReportSubData("Hemoglobin (gm%)","Normal Range - 14-18", "12"),
-                ReportData.ReportSubData("Serum Iron (ug/dl)","Normal Range - 14-18", "25"),
-                ReportData.ReportSubData("Ferritin (ng/mL)","Normal Range - 14-18", "122"),
-                ReportData.ReportSubData("Unsaturated Iron Binding Capacity (ug/dl)","Normal Range - 14-18", "435"),
-                ReportData.ReportSubData("Total Iron Binding Capacity (ug/dl)","Normal Range - 14-18", "65"),
-                ReportData.ReportSubData("Transferring Saturation","Normal Range - 14-18", "35"),
-            )))
-            add(ReportData("Vitamin", subData = arrayListOf(
-                ReportData.ReportSubData("Hemoglobin (gm%)","Normal Range - 14-18", "12"),
-                ReportData.ReportSubData("Serum Iron (ug/dl)","Normal Range - 14-18", "25"),
-                ReportData.ReportSubData("Ferritin (ng/mL)","Normal Range - 14-18", "122"),
-                ReportData.ReportSubData("Unsaturated Iron Binding Capacity (ug/dl)","Normal Range - 14-18", "435"),
-                ReportData.ReportSubData("Total Iron Binding Capacity (ug/dl)","Normal Range - 14-18", "65"),
-                ReportData.ReportSubData("Transferring Saturation","Normal Range - 14-18", "35"),
-            )))
-            add(ReportData("Vitamin", subData = arrayListOf(
-                ReportData.ReportSubData("Hemoglobin (gm%)","Normal Range - 14-18", "12"),
-                ReportData.ReportSubData("Serum Iron (ug/dl)","Normal Range - 14-18", "25"),
-                ReportData.ReportSubData("Ferritin (ng/mL)","Normal Range - 14-18", "122"),
-                ReportData.ReportSubData("Unsaturated Iron Binding Capacity (ug/dl)","Normal Range - 14-18", "435"),
-                ReportData.ReportSubData("Total Iron Binding Capacity (ug/dl)","Normal Range - 14-18", "65"),
-                ReportData.ReportSubData("Transferring Saturation","Normal Range - 14-18", "35"),
-            )))
-            add(ReportData("Minerals", subData = arrayListOf(
-                ReportData.ReportSubData("Hemoglobin (gm%)","Normal Range - 14-18", "12"),
-                ReportData.ReportSubData("Serum Iron (ug/dl)","Normal Range - 14-18", "25"),
-                ReportData.ReportSubData("Ferritin (ng/mL)","Normal Range - 14-18", "122"),
-                ReportData.ReportSubData("Unsaturated Iron Binding Capacity (ug/dl)","Normal Range - 14-18", "435"),
-                ReportData.ReportSubData("Total Iron Binding Capacity (ug/dl)","Normal Range - 14-18", "65"),
-                ReportData.ReportSubData("Transferring Saturation","Normal Range - 14-18", "35"),
-            )))
-            add(ReportData("Liver Function Tests", subData = arrayListOf(
-                ReportData.ReportSubData("Hemoglobin (gm%)","Normal Range - 14-18", "12"),
-                ReportData.ReportSubData("Serum Iron (ug/dl)","Normal Range - 14-18", "25"),
-                ReportData.ReportSubData("Ferritin (ng/mL)","Normal Range - 14-18", "122"),
-                ReportData.ReportSubData("Unsaturated Iron Binding Capacity (ug/dl)","Normal Range - 14-18", "435"),
-                ReportData.ReportSubData("Total Iron Binding Capacity (ug/dl)","Normal Range - 14-18", "65"),
-                ReportData.ReportSubData("Transferring Saturation","Normal Range - 14-18", "35"),
-            )))
+
         }
         arrListItem.forEach {
-            addReportItem(it)
+            addReportItem(R.drawable.ic_hematology,it)
         }
 
 
@@ -120,7 +76,7 @@ class ReportsHematologyFragment : Fragment() {
     }
 
 
-    fun addReportItem(data: ReportData) {
+    fun addReportItem(icon: Int, data: ReportData) {
         val container = binding.llContainer
 
         val itemBinding = LayoutReportItemBinding.inflate(
@@ -131,6 +87,8 @@ class ReportsHematologyFragment : Fragment() {
 
         itemBinding.apply {
             tvName.text = data.name
+            ivIcon.setImageResource(icon)
+
             setExpandCollapseView(Pair(ivExpand, llSubContainer))
             val subContainer = llSubContainer
             subContainer.removeAllViews()

@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.core.view.isGone
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -113,7 +111,7 @@ class ReportsBiochemicalFragment : Fragment() {
             )))
         }
         arrListItem.forEach {
-            addReportItem(it)
+            addReportItem(R.drawable.ic_biochemical, it)
         }
 
 
@@ -122,7 +120,7 @@ class ReportsBiochemicalFragment : Fragment() {
     }
 
 
-    fun addReportItem(data: ReportData) {
+    fun addReportItem(icon: Int, data: ReportData) {
         val container = binding.llContainer
 
         val itemBinding = LayoutReportItemBinding.inflate(
@@ -133,6 +131,8 @@ class ReportsBiochemicalFragment : Fragment() {
 
         itemBinding.apply {
             tvName.text = data.name
+            ivIcon.setImageResource(icon)
+
             setExpandCollapseView(Pair(ivExpand, llSubContainer))
             val subContainer = llSubContainer
             subContainer.removeAllViews()

@@ -111,7 +111,7 @@ class ReportsUrinalysisFragment : Fragment() {
             )))
         }
         arrListItem.forEach {
-            addReportItem(it)
+            addReportItem(R.drawable.ic_urinalysis,it)
         }
 
 
@@ -120,7 +120,7 @@ class ReportsUrinalysisFragment : Fragment() {
     }
 
 
-    fun addReportItem(data: ReportData) {
+    fun addReportItem(icon: Int, data: ReportData) {
         val container = binding.llContainer
 
         val itemBinding = LayoutReportItemBinding.inflate(
@@ -131,6 +131,8 @@ class ReportsUrinalysisFragment : Fragment() {
 
         itemBinding.apply {
             tvName.text = data.name
+            ivIcon.setImageResource(icon)
+
             setExpandCollapseView(Pair(ivExpand, llSubContainer))
             val subContainer = llSubContainer
             subContainer.removeAllViews()
